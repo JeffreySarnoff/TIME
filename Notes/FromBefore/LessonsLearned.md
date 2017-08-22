@@ -25,15 +25,15 @@ that ambiguity should be resolved (by user input, perhaps with a default), not p
 (UTC, timechange, isDST, zone) and converting to local time when show()ing it.
 >    
 > Indexing each timezone in the iana database requires 9 bits.    
->  Encoding timechange to/from UT in 15min increments requres another 8 bits   
-(9 if timechange is for Standard Time and a separate bit is used to reflect DST --    
-   a more flexible representation).
+>  Encoding timechange to/from UT in 15min increments requres another 8 or 9 bits    
+>  (9 if timechange is for STD time and a separate DST active bit is used)
+>
 > An implementation, might use 16 msbs for maskable timezone, and   
-16 lsbs for timechange in, say, 4sec units + DST bit.
+> 16 lsbs for timechange in, say, 4sec units + DST bit.
 
 #### (4) Leap seconds exist.
 > Most datetime systems ignore them for speed, which is ok    
-only if the user does not care about timespans that resolve < 1min.
+> only if the user does not care about timespans that resolve < 1min.
 
 #### (5) Use integer types/structures with proper algorithms
 >  They generate safer, faster, and more robust for datetime representation.
