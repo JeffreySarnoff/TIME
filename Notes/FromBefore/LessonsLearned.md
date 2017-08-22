@@ -1,10 +1,10 @@
 ### A few lessons learned making accurate, high performance datetime stuff
-      Jeffrey Sarnoff  May 5, 2012
+#####    Jeffrey Sarnoff  May 5, 2012
 
-(1) Users care about accuracy, speed and resolution
+- (1) Users care about accuracy, speed and resolution
 
-For important classes of apps (e.g. financial market analysis), it matters that datetime arithmetic is accurate and fast [no, faster].
-For other apps (e.g. LAN packet analysis, high energy physics), it matters that datetime arithmetic is accurate, fast, and high resolution [no, higher].
+-- For important classes of apps (e.g. financial market analysis), it matters that datetime arithmetic is accurate and fast [no, faster].
+-- For other apps (e.g. LAN packet analysis, high energy physics), it matters that datetime arithmetic is accurate, fast, and high resolution [no, higher].
 
 (2) Nobody has requested sub-second resolution with dates before 1900. The astrophysics community has found that it takes a pair of 64-bit values to work with Julian dates at current levels of accuracy. GPS time signals are accurate to within (less than) 32 nanoseconds.
 
